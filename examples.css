@@ -297,17 +297,17 @@ h1{
 /* Sections backgrounds
 * --------------------------------------- */
 #section0{
-	background-image: linear-gradient(128deg,#40afff,#3f61ff);
+	background-image: #405743;
 }
 
 #section1{
-	background-image: linear-gradient(128deg,#ff9a3f,#ff4b40);
+	background-image: #405743;
 }
 
 #section2{
-	background-image: linear-gradient(128deg,#fc40ff,#543fff);
+	background-image: #C28338;
 }
 
 #section3{
-	background-image: linear-gradient(128deg,#40fff2,#3fbcff);
+	background-image: #51413E;
 }
