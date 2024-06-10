@@ -16,12 +16,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Caveat:wght@400..700&family=Satisfy&display=swap" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <style>
-        .satisfy-regular {
-            font-family: "Satisfy", cursive;
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            font-family: "Lobster", sans-serif;
             font-weight: 400;
             font-style: normal;
-        }
+          }
+
         .slide p {
             max-width: 600px;
             margin: 0 auto;
@@ -73,6 +81,16 @@
             cursor: pointer;
             width: 100%;
         }
+        .language-selector {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 100;
+        }
+        .language-selector select {
+            padding: 5px;
+            font-size: 1em;
+        }
     </style>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
@@ -80,132 +98,166 @@
 
 <body>
 
-<ul id="menu">
-    <li data-menuanchor="firstPage" class="active"><a href="#firstPage">Home</a></li>
-    <li data-menuanchor="secondPage">              <a href="#secondPage">Skills</a></li>
-    <li data-menuanchor="thirdPage">               <a href="#thirdPage">Works</a></li>
-    <li data-menuanchor="fourthPage">              <a href="#fourthPage">Education</a></li>
-    <li data-menuanchor="fifthPage">               <a href="#fifthPage">Contact</a></li>
-</ul>
-
-<div id="fullpage">
-    <div class="section " id="section0">
-        <div class="intro">
-            <div class="center-content">
-                <img style="height: 200px;" src="https://i.imgur.com/PxM0pMo.png" alt="Logo">
-                <h1 class="satisfy-regular">Neemias Borges</h1>
-                <p >Welcome to my online portfolios. <br> Here you will find information about my skills, projects, and professional experience.</p>
-            </div>
-        </div>
+    <div class="language-selector">
+        <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="pt">Português</option>
+        </select>
     </div>
 
-    <div class="section" id="section1">
-        <h1 class="section-title">Skills</h1>
-        <p>
-            <span class="badge badge-csharp">C#</span>
-            <span class="badge badge-dotnet">.NET</span>
-            <span class="badge badge-sql">SQL</span>
-            <span class="badge badge-hana">HANA</span>
-            <span class="badge badge-abap">ABAP</span>
-            <span class="badge badge-js">JavaScript</span>
-            <span class="badge badge-jquery">jQuery</span>
-            <span class="badge badge-react">React</span>
-            <span class="badge badge-sap">SAP</span>
-            <span class="badge badge-php">PHP</span>
-            <span class="badge badge-laravel">Laravel</span>
-        </p>
-    </div>
+    <ul id="menu">
+        <li data-menuanchor="firstPage" class="active"><a href="#firstPage">Home</a></li>
+        <li data-menuanchor="secondPage"><a href="#secondPage">Skills</a></li>
+        <li data-menuanchor="thirdPage"><a href="#thirdPage">Works</a></li>
+        <li data-menuanchor="fourthPage"><a href="#fourthPage">Education</a></li>
+        <li data-menuanchor="fifthPage"><a href="#fifthPage">Contact</a></li>
+    </ul>
 
-    <div class="section" id="section2">
-        <h1 class="section-title">Latest Works</h1>
-        <div class="slide" id="slide1">
+    <div id="fullpage">
+        <div class="section" id="section0">
             <div class="intro">
-                <h1>Power One</h1>
-                <p>2020 - Present</p>
-                <p>
-                    <span class="badge badge-csharp">C#</span>
-                    <span class="badge badge-dotnet">.NET</span>
-                    <span class="badge badge-sql">SQL</span>
-                    <span class="badge badge-hana">HANA</span>
-                    <span class="badge badge-abap">ABAP</span>
-                    <span class="badge badge-js">JavaScript</span>
-                    <span class="badge badge-jquery">jQuery</span>
-                    <span class="badge badge-react">React</span>
-                    <span class="badge badge-sap">SAP</span>
-                </p>
-                <p>Developing software solutions within the SAP ecosystem, focusing on integrating various technologies to enhance business processes and optimize system performance.</p>
-                <p>Website:  <a href="https://poweroneconsultoria.com.br" target="_blank">Click here</a> </p>
-            </div>
-
-        </div>
-        <div class="slide" id="slide2">
-            <div class="intro">
-                <h1>Fabrica de Software</h1>
-                <p>2019 - 2020</p>
-                <p>
-                    <span class="badge badge-php">PHP</span>
-                    <span class="badge badge-jquery">jQuery</span>
-                    <span class="badge badge-laravel">Laravel</span>
-                </p>
-                <p>A team of developers using technologies based on PHP and frameworks such as Laravel and Bootstrap. You can view
-                    the projects completed by the team on the website: <a href="https://fabsoftware.itp.ifsp.edu.br/" target="_blank">Click here</a>
-                </p>
+                <div class="center-content">
+                    <img style="height: 200px;" src="https://i.imgur.com/PxM0pMo.png" alt="Logo">
+                    <h1 id="lobster-regular">Neemias Borges</h1>
+                    <p id="description">Welcome to my online portfolios. <br> Here you will find information about my skills, projects, and professional experience.</p>
+                </div>
             </div>
         </div>
 
-        <div class="slide" id="slide3">
-            <h1>Open Source Contributions</h1>
+        <div class="section" id="section1">
+            <h1 class="section-title">Skills</h1>
             <p>
-                Since 2019, I have been making contributions to open source projects. Some of my contributions include:
-                <br>
-                - Chart.JS, AVAILABLE AT: <a href="https://github.com/chartjs/Chart.js" target="_blank">Chart.js GitHub</a>
-                <br>
-                - ESG, AVAILABLE AT: <a href="https://github.com/korginc/logue-sdk" target="_blank">ESG GitHub</a>
-                <br>
-                - OSINT BR: <a href="https://github.com/osintbrazuca" target="_blank">OSINT BR</a>
-                <br><br>
-                AND OTHER CONTRIBUTIONS THAT CAN BE CHECKED ON MY GITHUB PROFILE AVAILABLE AT: <a href="https://github.com/NeemiasBorges" target="_blank">My GitHub</a>
+                <span class="badge badge-csharp">C#</span>
+                <span class="badge badge-dotnet">.NET</span>
+                <span class="badge badge-sql">SQL</span>
+                <span class="badge badge-hana">HANA</span>
+                <span class="badge badge-abap">ABAP</span>
+                <span class="badge badge-js">JavaScript</span>
+                <span class="badge badge-jquery">jQuery</span>
+                <span class="badge badge-react">React</span>
+                <span class="badge badge-sap">SAP</span>
+                <span class="badge badge-php">PHP</span>
+                <span class="badge badge-laravel">Laravel</span>
             </p>
         </div>
-    </div>
 
-    <div class="section" id="section3">
-        <h1 class="section-title">Education</h1>
-        <p>
-            <strong>IFSP - Federal Institute of São Paulo</strong><br>
-            <em>High School with Technical Education</em><br>
-            2017 - 2021
-        </p>
-    <br>
-        <p>
-            <strong>FATEC - Itapetininga</strong><br>
-            <em>Systems Analyst</em><br>
-            2020 - 2025
-        </p>
-    </div>
-    
-    <div class="section" id="section4">
-        <h1 class="section-title">Contact</h1>
-        <div style="text-align: center;">
-            <a href="https://wa.me//5511962926357" target="_blank" style="display: inline-block; margin: 10px; padding: 10px 20px; background-color: #25D366; color: white; text-decoration: none; border-radius: 5px;">
-                Contact via WhatsApp
-            </a>
-            <a href="mailto:ifsp.neemiasb@gmail.com" style="display: inline-block; margin: 10px; padding: 10px 20px; background-color: #0078D4; color: white; text-decoration: none; border-radius: 5px;">
-                Contact via Email
-            </a>
+        <div class="section" id="section2">
+            <h1 class="section-title">Latest Works</h1>
+            <div class="slide" id="slide1">
+                <div class="intro">
+                    <h1>Power One</h1>
+                    <p>2020 - Present</p>
+                    <p>
+                        <span class="badge badge-csharp">C#</span>
+                        <span class="badge badge-dotnet">.NET</span>
+                        <span class="badge badge-sql">SQL</span>
+                        <span class="badge badge-hana">HANA</span>
+                        <span class="badge badge-abap">ABAP</span>
+                        <span class="badge badge-js">JavaScript</span>
+                        <span class="badge badge-jquery">jQuery</span>
+                        <span class="badge badge-react">React</span>
+                        <span class="badge badge-sap">SAP</span>
+                    </p>
+                    <p>Developing software solutions within the SAP ecosystem, focusing on integrating various technologies to enhance business processes and optimize system performance.</p>
+                    <p>Website:  <a href="https://poweroneconsultoria.com.br" target="_blank">Click here</a> </p>
+                </div>
+            </div>
+
+            <div class="slide" id="slide2">
+                <div class="intro">
+                    <h1>Fabrica de Software</h1>
+                    <p>2019 - 2020</p>
+                    <p>
+                        <span class="badge badge-php">PHP</span>
+                        <span class="badge badge-jquery">jQuery</span>
+                        <span class="badge badge-laravel">Laravel</span>
+                    </p>
+                    <p>A team of developers using technologies based on PHP and frameworks such as Laravel and Bootstrap. You can view
+                        the projects completed by the team on the website: <a href="https://fabsoftware.itp.ifsp.edu.br/" target="_blank">Click here</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="slide" id="slide3">
+                <h1>Open Source Contributions</h1>
+                <p>
+                    Since 2019, I have been making contributions to open source projects. Some of my contributions include:
+                    <br>
+                    - Chart.JS, AVAILABLE AT: <a href="https://github.com/chartjs/Chart.js" target="_blank">Chart.js GitHub</a>
+                    <br>
+                    - ESG, AVAILABLE AT: <a href="https://github.com/korginc/logue-sdk" target="_blank">ESG GitHub</a>
+                    <br>
+                    - OSINT BR: <a href="https://github.com/osintbrazuca" target="_blank">OSINT BR</a>
+                    <br><br>
+                    AND OTHER CONTRIBUTIONS THAT CAN BE CHECKED ON MY GITHUB PROFILE AVAILABLE AT: <a href="https://github.com/NeemiasBorges" target="_blank">My GitHub</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="section" id="section3">
+            <h1 class="section-title">Education</h1>
+            <p>
+                <strong>IFSP - Federal Institute of São Paulo</strong><br>
+                <em>High School with Technical Education</em><br>
+                2017 - 2021
+            </p>
+        <br>
+            <p>
+                <strong>FATEC - Itapetininga</strong><br>
+                <em>Systems Analyst</em><br>
+                2020 - 2025
+            </p>
+        </div>
+        
+        <div class="section" id="section4">
+            <h1 class="section-title">Contact</h1>
+            <div style="text-align: center;">
+                <a href="https://wa.me//5511962926357" target="_blank" style="display: inline-block; margin: 10px; padding: 10px 20px; background-color: #25D366; color: white; text-decoration: none; border-radius: 5px;">
+                    Contact via WhatsApp
+                </a>
+                <a href="mailto:ifsp.neemiasb@gmail.com" style="display: inline-block; margin: 10px; padding: 10px 20px; background-color: #0078D4; color: white; text-decoration: none; border-radius: 5px;">
+                    Contact via Email
+                </a>
+            </div>
         </div>
     </div>
-</div>
 
-<script type="text/javascript" src="fullpage.js"></script>
-<script type="text/javascript" src="examples.js"></script>
-<script type="text/javascript">
-    var myFullpage = new fullpage('#fullpage', {
-        sectionsColor: ['#405743','#C28338', '#51413E', '#323e2a', '#152D3F'],
-        anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'fifthPage'],
-        menu: '#menu',
-        slidesNavigation: true,
-        lazyLoad: false,
-        credits: { enabled: true }
-    });
-</script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- fullPage.js -->
+    <script type="text/javascript" src="fullpage.js"></script>
+    <script type="text/javascript" src="examples.js"></script>
+    <script type="text/javascript">
+        var myFullpage = new fullpage('#fullpage', {
+            sectionsColor: ['#405743','#C28338', '#51413E', '#323e2a', '#152D3F'],
+            anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'fifthPage'],
+            menu: '#menu',
+            slidesNavigation: true,
+            lazyLoad: false,
+            credits: { enabled: true }
+        });
+
+        $(document).ready(function() {
+            const content = {
+                en: {
+                    title: "Neemias Borges",
+                    description: "Welcome to my online portfolio. <br> Here you will find information about my skills, projects, and professional experience.",
+                },
+                pt: {
+                    title: "Neemias Borges",
+                    description: "Bem-vindo ao meu portfólio online. <br> Aqui você encontrará informações sobre minhas habilidades, projetos e experiência profissional.",
+                }
+            };
+
+            $('#languageSelect').change(function() {
+                const language = $(this).val();
+                $('#title').html(content[language].title);
+                $('#description').html(content[language].description);
+            });
+
+            // Apply initial language
+            $('#languageSelect').trigger('change');
+        });
+    </script>
+</body>
+</html>
