@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Contagem Regressiva para a Praia</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <style>
+    /* ... (mantenha os estilos existentes) ... */
+    
+    .question-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+    
+    .checkbox-container {
+      display: inline-block;
+      margin: 10px;
+      position: relative;
+    }
+    
+    *,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-align-items: center;
+  -webkit-flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -webkit-justify-content: center;
+}
+
+body, input {
+  display: -webkit-flex;
+  font-family: 'Avenir', 'helvetica neue', helvetica, arial, sans-serif;
+}
+
+.age-label {
+  color: #B0B5B9;
+  font-size: 1.2rem;
+  line-height: 1;
+  margin: 0 0 0 2px;
+}
+
+.count {
+  color: #494949;
+  margin: 0;
+  font-size: 4rem;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.count sup {
+  font-size: 2.4rem;
+  margin-left: 7px;
+}
+
+label {
+  display: block;
+}
+
+
+
+
+button {
+  outline: none;
+  display: block;
+  cursor: pointer;
+  color: #FFF;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #0BE;
+}
+
+footer {
+  padding-top: 0.5rem;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="count question-container">
+    <h2>Aceita fazer grupo comigo?</h2>
+    <div class="checkbox-container">
+      <label>
+        <input type="checkbox" id="sim" checked value="true"> Sim
+      </label>
+    </div>
+    <div class="checkbox-container">
+      <label>
+        <input type="checkbox" id="nao" disabled> Não
+      </label>
+    </div>
+  </div>
+
+  <script>
+    const naoCheckbox = document.getElementById('nao');
+    const naoContainer = naoCheckbox.parentElement.parentElement;
+    naoContainer.addEventListener('mouseover', moveNao);
+
+    function moveNao() {
+      const maxX = window.innerWidth - naoContainer.offsetWidth;
+      const maxY = window.innerHeight - naoContainer.offsetHeight;
+
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+
+      naoContainer.style.position = 'fixed';
+      naoContainer.style.left = randomX + 'px';
+      naoContainer.style.top = randomY + 'px';
+    }
+  </script>
+</body>
+</html>
